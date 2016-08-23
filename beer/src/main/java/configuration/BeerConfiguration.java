@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = "br.com.clubprivate")
 @ImportResource("/WEB-INF/applicationContext.xml")
-public class ClubPrivateConfiguration {
+public class BeerConfiguration {
 
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
