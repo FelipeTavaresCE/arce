@@ -1,12 +1,8 @@
-package model;
-
-import org.codehaus.jackson.annotate.JsonIgnore;
+package br.com.beer.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * Created by felipe.tavares on 23/08/16.

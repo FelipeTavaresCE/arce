@@ -1,8 +1,7 @@
-package dao.impl;
+package br.com.beer.dao.impl;
 
-import br.com.clubprivate.daos.DAO;
-import br.com.clubprivate.models.AbstractModel;
-import dao.DAO;
+import br.com.beer.dao.DAO;
+import br.com.beer.model.AbstractModel;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

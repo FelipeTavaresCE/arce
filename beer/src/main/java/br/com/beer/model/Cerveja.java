@@ -1,4 +1,4 @@
-package model;
+package br.com.beer.model;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 

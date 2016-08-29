@@ -1,4 +1,4 @@
-package configuration;
+package br.com.beer.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "br.com.clubprivate")
+@ComponentScan(basePackages = "br.com.beer")
 @ImportResource("/WEB-INF/applicationContext.xml")
 public class BeerConfiguration {
 

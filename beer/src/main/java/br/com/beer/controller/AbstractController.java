@@ -1,8 +1,6 @@
-package controller;
+package br.com.beer.controller;
 
-import br.com.clubprivate.daos.DAO;
-import br.com.clubprivate.daos.UserDAO;
-import br.com.clubprivate.models.AbstractModel;
+import br.com.beer.dao.DAO;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -12,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import br.com.beer.model.AbstractModel;
 
 public abstract class AbstractController<T extends AbstractModel, ID> {
 
@@ -20,9 +19,6 @@ public abstract class AbstractController<T extends AbstractModel, ID> {
     private Class<T> itemClass;
     private Collection<T> items;
 
-    @Autowired
-    private UserDAO userDAO;
-
     public AbstractController() {
     }
 
@@ -30,21 +26,10 @@ public abstract class AbstractController<T extends AbstractModel, ID> {
         this.itemClass = itemClass;
     }
 
-    //    public Response check(HttpServletRequest request) {
-//        String[] token = request.getHeader("x-auth-token").split("_");
-//        User usuario = userDAO.find((long)1);
-//        if (usuario.getBloqueado()) {
-//            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Usuário Bloqueado").build();
-//        }
-//        return null;
-//    }
-
 
     @RequestMapping(value = "/",method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<List<T>> list(HttpServletRequest request) {
-//        Response response = check(request);
-//        if(response == null){
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setContentType(MediaType.APPLICATION_JSON);
         List<T> listAll = dao.findAll();
@@ -53,12 +38,9 @@ public abstract class AbstractController<T extends AbstractModel, ID> {
         } else {
             return new ResponseEntity<List<T>>(listAll, responseHeaders,HttpStatus.NO_CONTENT); // 204
         }
-//        }
-//        return response;
     }
     @ResponseBody
     @RequestMapping(value = "/",method = RequestMethod.POST)// ,headers="Accept=application/xml, application/json" consumes = "application/json"
-//    @ResponseStatus(value = HttpStatus.CREATED) // Como estamos tratando nenhuma exceção aqui, ele por padrão já retorna um status CREATED.
     public  T incluir(@RequestBody T entity) {
     	dao.update(entity);
     	return entity;

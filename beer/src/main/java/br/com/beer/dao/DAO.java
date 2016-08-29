@@ -1,4 +1,4 @@
-package dao;
+package br.com.beer.dao;
 
 import java.util.List;
 

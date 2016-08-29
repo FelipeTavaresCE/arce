@@ -1,4 +1,4 @@
-package model;
+package br.com.beer.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

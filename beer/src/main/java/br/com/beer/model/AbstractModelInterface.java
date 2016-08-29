@@ -1,4 +1,4 @@
-package model;
+package br.com.beer.model;
 
 public interface AbstractModelInterface<T> {
 

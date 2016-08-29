@@ -1,4 +1,4 @@
-package configuration;
+package br.com.beer.configuration;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
