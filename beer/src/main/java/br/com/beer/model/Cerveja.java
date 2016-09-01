@@ -84,4 +84,6 @@ public class Cerveja extends AbstractModel<Long> implements Serializable {
         this.tamanhoCerveja = tamanhoCerveja;
     }
 
+
+
 }
